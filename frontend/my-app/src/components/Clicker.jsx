@@ -31,29 +31,82 @@ const Clicker = ({ userId }) => {
         }
     };
 
+    const styles = {
+        gameContainer: {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+          backgroundColor: '#f3f4f6',
+          padding: '1rem'
+        },
+        gameContent: {
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2rem'
+        },
+        gameTitle: {
+          fontSize: '2.25rem',
+          fontWeight: 'bold',
+          color: '#1f2937'
+        },
+        gameStats: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem'
+        },
+        score: {
+          fontSize: '1.5rem',
+          fontWeight: '600'
+        },
+        prizes: {
+          fontSize: '1.25rem'
+        },
+        clickButton: {
+          backgroundColor: '#3b82f6',
+          color: 'white',
+          fontWeight: 'bold',
+          padding: '1rem 2rem',
+          borderRadius: '0.5rem',
+          fontSize: '1.25rem',
+          transition: 'background-color 0.3s',
+          cursor: 'pointer'
+        },
+        clickButtonHover: {
+          backgroundColor: '#2563eb'
+        },
+        gameMessage: {
+          marginTop: '1rem'
+        }
+    };
+
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-        <div className="text-center space-y-8">
-        <h1 className="text-4xl font-bold text-gray-800">Click Counter Game</h1>
+        <div style={styles.gameContainer}>
+        <div style={styles.gameContent}>
+        <h1 style={styles.gameTitle}>Click Counter Game</h1>
         
-        <div className="space-y-4">
-            <div className="text-2xl font-semibold">
+        <div style={styles.gameStats}>
+          <div style={styles.score}>
             Score: {totalScore}
-            </div>
-            <div className="text-xl">
+          </div>
+          <div style={styles.prizes}>
             Prizes Won: {prizesWon}
-            </div>
-            
-            <button
+          </div>
+          
+          <button
             onClick={handleClick}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors"
-            >
+            style={styles.clickButton}
+            onMouseEnter={(e) => e.target.style.backgroundColor = styles.clickButtonHover.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = styles.clickButton.backgroundColor}
+          >
             Click Me!
-            </button>
+          </button>
         </div>
-        {message && <p>{message}</p>}
-        </div>
-        </div>
+        {message && <p style={styles.gameMessage}>{message}</p>}
+      </div>
+    </div>
     );
 };
 
