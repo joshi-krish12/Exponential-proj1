@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const handleClick = require('./jobs/handleClick');
+const handleClick = require('./jobs/hadleClick');
 const getUserData = require('./jobs/getUserData');
 
 const app = express();
