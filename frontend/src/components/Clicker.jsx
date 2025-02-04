@@ -26,7 +26,8 @@ const Clicker = ({ userId }) => {
             } else if (response.data.totalScore > 1) {
                 setMessage(`You earned ${response.data.totalScore} points!`);
             }
-        } catch (error) {
+        } 
+        catch (error) {
             console.error(error);
         }
     };
