@@ -32,12 +32,27 @@ const Clicker = ({ userId }) => {
     };
 
     return (
-        <div>
-            <h1>Cookie Clicker</h1>
-            <p>Total Score: {totalScore}</p>
-            <p>Prizes Won: {prizesWon}</p>
-            <button onClick={handleClick}>Click Me!</button>
-            {message && <p>{message}</p>}
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+        <div className="text-center space-y-8">
+        <h1 className="text-4xl font-bold text-gray-800">Click Counter Game</h1>
+        
+        <div className="space-y-4">
+            <div className="text-2xl font-semibold">
+            Score: {totalScore}
+            </div>
+            <div className="text-xl">
+            Prizes Won: {prizesWon}
+            </div>
+            
+            <button
+            onClick={handleClick}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors"
+            >
+            Click Me!
+            </button>
+        </div>
+        {message && <p>{message}</p>}
+        </div>
         </div>
     );
 };

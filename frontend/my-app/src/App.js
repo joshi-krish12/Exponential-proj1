@@ -2,7 +2,7 @@ import React from 'react';
 import Clicker from './components/Clicker';
 
 function App() {
-    const userId = 'user123';
+    const userId = 'fetchPoints';
     return (
         <div>
             <Clicker userId={userId} />
